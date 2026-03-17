@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright 2026 Tomasz Kornuta
+#
+# Recursively encrypt all plaintext YAML/YML files using SOPS + AGE
 set -euo pipefail
 
 if ! command -v sops >/dev/null 2>&1; then

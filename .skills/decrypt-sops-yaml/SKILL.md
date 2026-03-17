@@ -1,3 +1,6 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- Copyright 2026 Tomasz Kornuta -->
+
 ---
 name: decrypt-sops-yaml
 description: Decrypt one SOPS-managed .enc.yaml/.enc.yml file or many encrypted YAML/YML files into local plaintext YAML/YML files using the local age identity configured for SOPS. Use when a trusted local runtime needs temporary plaintext access.
@@ -10,7 +13,7 @@ Use this skill when encrypted SOPS YAML/YML files need to be decrypted locally.
 ## Preconditions
 
 - `sops` is installed and available on PATH.
-- A local age identity is configured for SOPS, commonly at `~/.config/sops/age/keys.txt`.
+- A local age identity is configured for SOPS (set `SOPS_AGE_KEY_FILE` to point to your private key file).
 - The input file exists and ends with `.enc.yaml` or `.enc.yml`.
 - The plaintext output location is ignored by Git.
 

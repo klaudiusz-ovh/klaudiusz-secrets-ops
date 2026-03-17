@@ -1,3 +1,6 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- Copyright 2026 Tomasz Kornuta -->
+
 # Klaudiusz Secrets Operations (SOPS)
 
 Encryption/decryption skills and utilities for managing secrets using Mozilla SOPS + AGE.
@@ -12,14 +15,14 @@ Encryption/decryption skills and utilities for managing secrets using Mozilla SO
 ### Decrypt a secret file
 
 ```bash
-export SOPS_AGE_KEY_FILE=~/.config/sops/age/klaudiusz-keys.txt
-sops -d path/to/file.enc.yaml
+export SOPS_AGE_KEY_FILE=<path-to-your-age-private-key-file>.txt
+bash .skills/decrypt-sops-yaml/scripts/decrypt_sops_yaml.sh path/to/file.enc.yaml
 ```
 
 ### Encrypt a plaintext file
 
 ```bash
-export SOPS_AGE_RECIPIENTS=age1t7lsvgy875c0vytf550r3jqqqnesepyr5ekd9mavcqk7t525k52qjllz0j
+export SOPS_AGE_RECIPIENTS=<your-age-public-key>
 bash .skills/encrypt-sops-yaml/scripts/encrypt_sops_yaml.sh path/to/file.yaml
 ```
 

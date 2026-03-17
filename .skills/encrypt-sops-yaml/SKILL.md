@@ -1,3 +1,6 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- Copyright 2026 Tomasz Kornuta -->
+
 ---
 name: encrypt-sops-yaml
 description: Encrypt one plaintext YAML/YML file or many plaintext YAML/YML files into SOPS-managed .enc.yaml/.enc.yml files using the SOPS_AGE_RECIPIENTS environment variable. Use when you need to create or refresh encrypted secret files for Git.
