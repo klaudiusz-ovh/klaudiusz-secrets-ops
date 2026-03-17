@@ -1,0 +1,20 @@
+# Plaintext secret files (keep encrypted versions only)
+*.yaml
+*.yml
+!*.enc.yaml
+!*.enc.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.pyc
+__pycache__/
