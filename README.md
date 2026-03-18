@@ -24,19 +24,36 @@ curl -L https://github.com/getsops/sops/releases/download/v3.8.1/sops-v3.8.1.lin
 chmod +x sops && sudo mv sops /usr/local/bin/
 ```
 
-### 2. Configure OpenClaw environment
+### 2. Generate AGE encryption key
 
-Create `~/.openclaw/.env` with your SOPS credentials:
+Generate your AGE private key (one-time setup):
+
+```bash
+mkdir -p ~/.config/sops/age
+age-keygen -o -f ~/.config/sops/age/klaudiusz-keys.txt
+```
+
+Extract your public key for `SOPS_AGE_RECIPIENTS`:
+
+```bash
+grep "^# public key:" ~/.config/sops/age/klaudiusz-keys.txt | sed 's/# public key: //'
+```
+
+Save the output — you'll use it in the next step.
+
+### 3. Configure OpenClaw environment
+
+Create `~/.openclaw/.env` with your SOPS credentials (replace `age1...` with the public key from step 2):
 
 ```bash
 cat > ~/.openclaw/.env <<'EOF'
-SOPS_AGE_KEY_FILE=/path/to/age/private/key.txt
+SOPS_AGE_KEY_FILE=~/.config/sops/age/klaudiusz-keys.txt
 SOPS_AGE_RECIPIENTS=age1...
 EOF
 chmod 600 ~/.openclaw/.env
 ```
 
-### 3. Restart the gateway
+### 4. Restart the gateway
 
 After creating `~/.openclaw/.env`, restart the OpenClaw gateway to load the new environment variables:
 
