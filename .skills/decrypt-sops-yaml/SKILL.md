@@ -1,9 +1,7 @@
-<!-- SPDX-License-Identifier: Apache-2.0 -->
-<!-- Copyright 2026 Tomasz Kornuta -->
-
 ---
 name: decrypt-sops-yaml
 description: Decrypt one SOPS-managed .enc.yaml/.enc.yml file or many encrypted YAML/YML files into local plaintext YAML/YML files using the local age identity configured for SOPS. Use when a trusted local runtime needs temporary plaintext access.
+metadata: {"openclaw": {"requires": {"bins": ["sops"]}}}
 ---
 
 # Decrypt SOPS YAML
