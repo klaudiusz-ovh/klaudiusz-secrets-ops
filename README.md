@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: Apache-2.0 -->
 <!-- Copyright 2026 KFC Labs -->
 
-# claw-secrets 🔐
+# claw-sops 🔐
 
 Encryption/decryption skills and utilities for OpenClaw agents using Mozilla SOPS + AGE.
 
